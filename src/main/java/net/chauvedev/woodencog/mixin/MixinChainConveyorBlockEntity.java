@@ -22,9 +22,10 @@ public class MixinChainConveyorBlockEntity {
     @Overwrite
     public static boolean getChainsFromInventory(Player player, ItemStack chain, int cost, boolean simulate) {
         LOGGER.info("[MixinChainConveyorBlockEntity] getChainsFromInventory called: player={}, chain={}, cost={}, simulate={}", player.getName().getString(), net.minecraftforge.registries.ForgeRegistries.ITEMS.getKey(chain.getItem()), cost, simulate);
-        int found = 0;
+        int remaining = cost;
         Inventory inv = player.getInventory();
         int size = inv.items.size();
+        // Only count/consume chains of the same item type as 'chain'
         for (int j = 0; j <= size + 1; j++) {
             int i = j;
             boolean offhand = j == size + 1;
@@ -36,25 +37,25 @@ public class MixinChainConveyorBlockEntity {
                 continue;
             ItemStack stackInSlot = (offhand ? inv.offhand : inv.items).get(i);
             LOGGER.debug("[MixinChainConveyorBlockEntity] Checking slot {} (offhand={}): {} x{}", i, offhand, net.minecraftforge.registries.ForgeRegistries.ITEMS.getKey(stackInSlot.getItem()), stackInSlot.getCount());
-            if (!stackInSlot.is(ModTags.Items.CHAINS))
+            if (!stackInSlot.is(ModTags.Items.CHAINS) || !ItemStack.isSameItemSameTags(stackInSlot, chain))
                 continue;
-            if (found >= cost)
-                continue;
+            if (remaining <= 0)
+                break;
             int count = stackInSlot.getCount();
-            if (!simulate) {
-                int remainingItems = count - Math.min(cost - found, count);
-                if (i == inv.selected)
-                    stackInSlot.setTag(null);
-                ItemStack newItem = ItemHandlerHelper.copyStackWithSize(stackInSlot, remainingItems);
+            int toRemove = Math.min(remaining, count);
+            if (!simulate && toRemove > 0) {
+                ItemStack newItem = stackInSlot.copy();
+                newItem.setCount(count - toRemove);
                 if (offhand)
                     player.setItemInHand(net.minecraft.world.InteractionHand.OFF_HAND, newItem);
                 else
                     inv.setItem(i, newItem);
-                LOGGER.info("[MixinChainConveyorBlockEntity] Consumed {} chains from slot {} (offhand={})", Math.min(cost - found, count), i, offhand);
+                LOGGER.info("[MixinChainConveyorBlockEntity] Consumed {} chains from slot {} (offhand={})", toRemove, i, offhand);
             }
-            found += count;
+            remaining -= toRemove;
         }
-        LOGGER.info("[MixinChainConveyorBlockEntity] Found {} chains, needed {}: {}", found, cost, found >= cost);
-        return found >= cost;
+        boolean hasEnough = remaining <= 0;
+        LOGGER.info("[MixinChainConveyorBlockEntity] Chains left to find: {}, hasEnough={}", remaining, hasEnough);
+        return hasEnough;
     }
 }
