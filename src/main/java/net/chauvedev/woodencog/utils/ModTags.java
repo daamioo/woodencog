@@ -21,6 +21,7 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> UNBURNABLE = tag("unburnable");
+        public static final TagKey<Item> CHAINS = tag("chains");
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(WoodenCog.MOD_ID, name));

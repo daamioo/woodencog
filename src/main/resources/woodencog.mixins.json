@@ -23,7 +23,13 @@
     "jei.MixinNormalizedTypedItemStack",
     "jei.MixinTypedItemStack",
     "recipes.MixinFillingBySpout",
-    "recipes.MixinRecipeApplier"
+    "recipes.MixinRecipeApplier",
+    "MixinChainConveyorBlock",
+    "MixinChainConveyorBlockEntity",
+    "MixinChainConveyorBlockEntity_ChainDestroyed",
+    "MixinChainConveyorConnectionPacket",
+    "MixinInputEvents",
+    "MixinChainConveyorConnectionHandler"
   ],
   "client": [
     "MixinCreateRecipeCategory"
