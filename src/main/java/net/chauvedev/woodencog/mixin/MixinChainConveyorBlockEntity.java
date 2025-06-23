@@ -7,21 +7,17 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.ItemHandlerHelper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
 @Mixin(value = ChainConveyorBlockEntity.class, remap = false)
 public class MixinChainConveyorBlockEntity {
-    private static final Logger LOGGER = LoggerFactory.getLogger("WoodenCog|MixinChainConveyorBlockEntity");
     /**
      * @author woodencog
      * @reason Allow any chain in the tag
      */
     @Overwrite
     public static boolean getChainsFromInventory(Player player, ItemStack chain, int cost, boolean simulate) {
-        LOGGER.info("[MixinChainConveyorBlockEntity] getChainsFromInventory called: player={}, chain={}, cost={}, simulate={}", player.getName().getString(), net.minecraftforge.registries.ForgeRegistries.ITEMS.getKey(chain.getItem()), cost, simulate);
         int remaining = cost;
         Inventory inv = player.getInventory();
         int size = inv.items.size();
@@ -36,7 +32,6 @@ public class MixinChainConveyorBlockEntity {
             else if (j == inv.selected)
                 continue;
             ItemStack stackInSlot = (offhand ? inv.offhand : inv.items).get(i);
-            LOGGER.debug("[MixinChainConveyorBlockEntity] Checking slot {} (offhand={}): {} x{}", i, offhand, net.minecraftforge.registries.ForgeRegistries.ITEMS.getKey(stackInSlot.getItem()), stackInSlot.getCount());
             if (!stackInSlot.is(ModTags.Items.CHAINS) || !ItemStack.isSameItemSameTags(stackInSlot, chain))
                 continue;
             if (remaining <= 0)
@@ -50,12 +45,9 @@ public class MixinChainConveyorBlockEntity {
                     player.setItemInHand(net.minecraft.world.InteractionHand.OFF_HAND, newItem);
                 else
                     inv.setItem(i, newItem);
-                LOGGER.info("[MixinChainConveyorBlockEntity] Consumed {} chains from slot {} (offhand={})", toRemove, i, offhand);
             }
             remaining -= toRemove;
         }
-        boolean hasEnough = remaining <= 0;
-        LOGGER.info("[MixinChainConveyorBlockEntity] Chains left to find: {}, hasEnough={}", remaining, hasEnough);
-        return hasEnough;
+        return remaining <= 0;
     }
 }
