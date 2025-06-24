@@ -5,17 +5,23 @@ import net.chauvedev.woodencog.WoodenCog;
 import net.chauvedev.woodencog.extensions.IChainData;
 import net.chauvedev.woodencog.utils.ModTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Shadow;
 
 import java.util.Map;
 
 @Mixin(value = ChainConveyorBlockEntity.class, remap = false)
-public class MixinChainConveyorBlockEntity_ChainDestroyed {
+public abstract class MixinChainConveyorBlockEntity_ChainDestroyed {
+
+    @Shadow
+    BlockPos chainDestroyedEffectToSend;
+
     /**
      * @author woodencog
      * @reason Drop the specific chain type used for the connection.
@@ -23,10 +29,14 @@ public class MixinChainConveyorBlockEntity_ChainDestroyed {
     @Overwrite
     public void chainDestroyed(BlockPos target, boolean spawnDrops, boolean sendEffect) {
         ChainConveyorBlockEntity self = (ChainConveyorBlockEntity)(Object)this;
+        int chainCount = ChainConveyorBlockEntity.getChainCost(target);
+        if (sendEffect) {
+            this.chainDestroyedEffectToSend = target;
+            self.sendData();
+        }
         if (!spawnDrops)
             return;
 
-        int chainCount = ChainConveyorBlockEntity.getChainCost(target);
         Level level = self.getLevel();
         BlockPos worldPosition = self.getBlockPos();
 
@@ -54,9 +64,15 @@ public class MixinChainConveyorBlockEntity_ChainDestroyed {
                 dropStack = new ItemStack(Blocks.CHAIN.asItem());
             }
         }
-        while (chainCount > 0) {
-            Block.popResource(level, worldPosition, dropStack.copyWithCount(Math.min(chainCount, 64)));
-            chainCount -= 64;
+
+        final ItemStack finalDropStack = dropStack;
+        if (!self.forPointsAlongChains(target, chainCount,
+            vec -> level.addFreshEntity(new ItemEntity(level, vec.x, vec.y, vec.z, finalDropStack.copy())))) {
+            int remaining = chainCount;
+            while (remaining > 0) {
+                Block.popResource(level, worldPosition, finalDropStack.copyWithCount(Math.min(remaining, 64)));
+                remaining -= 64;
+            }
         }
     }
 }
