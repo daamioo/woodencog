@@ -25,9 +25,7 @@
     "recipes.MixinFillingBySpout",
     "recipes.MixinRecipeApplier",
     "MixinChainConveyorBlock",
-    "MixinChainConveyorBlockEntity_Data",
     "MixinChainConveyorBlockEntity",
-    "MixinChainConveyorBlockEntity_ChainDestroyed",
     "MixinChainConveyorConnectionPacket",
     "MixinInputEvents",
     "MixinChainConveyorConnectionHandler"
