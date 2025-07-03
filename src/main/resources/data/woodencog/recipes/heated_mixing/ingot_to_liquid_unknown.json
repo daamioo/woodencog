@@ -5,7 +5,7 @@
             "ingredient": {
                 "item": "tfc:metal/ingot/unknown"
             },
-            "min_temp": 384,
+            "min_temp": 384.0,
             "max_temp": 3000
         }
     ],
@@ -16,5 +16,5 @@
             "amount": 100
         }
     ],
-    "heatRequirement": 384
+    "heatRequirement": 384.0
 }

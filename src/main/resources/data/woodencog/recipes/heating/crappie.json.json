@@ -4,6 +4,6 @@
         "item": "tfc:food/crappie"
     },
     "result": "tfc:food/cooked_crappie",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

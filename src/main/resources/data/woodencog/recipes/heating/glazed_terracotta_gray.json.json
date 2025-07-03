@@ -4,6 +4,6 @@
         "item": "minecraft:gray_terracotta"
     },
     "result": "minecraft:gray_glazed_terracotta",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

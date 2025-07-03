@@ -4,6 +4,6 @@
         "item": "tfc:food/rainbow_trout"
     },
     "result": "tfc:food/cooked_rainbow_trout",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

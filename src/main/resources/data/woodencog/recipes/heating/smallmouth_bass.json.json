@@ -4,6 +4,6 @@
         "item": "tfc:food/smallmouth_bass"
     },
     "result": "tfc:food/cooked_smallmouth_bass",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

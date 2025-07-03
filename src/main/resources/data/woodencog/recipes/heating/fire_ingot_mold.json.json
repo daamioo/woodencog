@@ -4,6 +4,6 @@
         "item": "tfc:ceramic/unfired_fire_ingot_mold"
     },
     "result": "tfc:ceramic/fire_ingot_mold",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

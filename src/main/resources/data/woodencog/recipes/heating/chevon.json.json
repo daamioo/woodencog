@@ -4,6 +4,6 @@
         "item": "tfc:food/chevon"
     },
     "result": "tfc:food/cooked_chevon",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

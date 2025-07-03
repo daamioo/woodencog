@@ -4,6 +4,6 @@
         "item": "tfc:food/rabbit"
     },
     "result": "tfc:food/cooked_rabbit",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

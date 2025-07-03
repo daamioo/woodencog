@@ -4,6 +4,6 @@
         "item": "tfc:food/oat_dough"
     },
     "result": "tfc:food/oat_bread",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

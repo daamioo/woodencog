@@ -5,7 +5,7 @@
             "ingredient": {
                 "item": "tfc:metal/double_ingot/unknown"
             },
-            "min_temp": 264,
+            "min_temp": 264.0,
             "max_temp": 3000
         }
     ],

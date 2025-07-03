@@ -4,6 +4,6 @@
         "item": "tfc:food/cod"
     },
     "result": "tfc:food/cooked_cod",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

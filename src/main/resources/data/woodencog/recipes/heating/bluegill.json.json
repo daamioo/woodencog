@@ -4,6 +4,6 @@
         "item": "tfc:food/bluegill"
     },
     "result": "tfc:food/cooked_bluegill",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

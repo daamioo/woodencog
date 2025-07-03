@@ -4,6 +4,6 @@
         "item": "tfc:food/dried_kelp"
     },
     "result": "tfc:powder/soda_ash",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

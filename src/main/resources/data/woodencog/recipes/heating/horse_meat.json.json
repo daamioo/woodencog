@@ -4,6 +4,6 @@
         "item": "tfc:food/horse_meat"
     },
     "result": "tfc:food/cooked_horse_meat",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

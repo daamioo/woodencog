@@ -4,6 +4,6 @@
         "item": "tfc:powder/flux"
     },
     "result": "tfc:powder/lime",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

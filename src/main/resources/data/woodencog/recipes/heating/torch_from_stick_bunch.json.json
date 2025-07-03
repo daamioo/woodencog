@@ -4,6 +4,6 @@
         "item": "tfc:stick_bunch"
     },
     "result": "tfc:torch",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

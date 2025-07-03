@@ -4,6 +4,6 @@
         "item": "tfc:food/bear"
     },
     "result": "tfc:food/cooked_bear",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

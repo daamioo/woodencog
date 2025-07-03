@@ -4,6 +4,6 @@
         "item": "tfc:food/rice_dough"
     },
     "result": "tfc:food/rice_bread",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

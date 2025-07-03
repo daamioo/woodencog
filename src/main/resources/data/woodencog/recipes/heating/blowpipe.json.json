@@ -4,6 +4,6 @@
         "item": "tfc:ceramic/unfired_blowpipe"
     },
     "result": "tfc:ceramic_blowpipe",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

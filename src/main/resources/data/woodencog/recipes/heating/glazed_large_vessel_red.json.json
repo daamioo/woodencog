@@ -4,6 +4,6 @@
         "item": "tfc:ceramic/unfired_large_vessel/red"
     },
     "result": "tfc:ceramic/large_vessel/red",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

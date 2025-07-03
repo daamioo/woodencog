@@ -4,6 +4,6 @@
         "item": "minecraft:egg"
     },
     "result": "tfc:food/cooked_egg",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

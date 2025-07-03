@@ -4,6 +4,6 @@
         "item": "tfc:ceramic/unfired_bowl"
     },
     "result": "tfc:ceramic/bowl",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

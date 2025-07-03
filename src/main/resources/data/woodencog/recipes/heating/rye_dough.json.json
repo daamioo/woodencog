@@ -4,6 +4,6 @@
         "item": "tfc:food/rye_dough"
     },
     "result": "tfc:food/rye_bread",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

@@ -4,6 +4,6 @@
         "item": "tfc:ceramic/purple_unfired_vessel"
     },
     "result": "tfc:ceramic/purple_glazed_vessel",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

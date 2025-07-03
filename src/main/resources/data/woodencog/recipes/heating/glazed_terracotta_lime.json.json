@@ -4,6 +4,6 @@
         "item": "minecraft:lime_terracotta"
     },
     "result": "minecraft:lime_glazed_terracotta",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

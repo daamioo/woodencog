@@ -4,6 +4,6 @@
         "item": "tfc:food/hyena"
     },
     "result": "tfc:food/cooked_hyena",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

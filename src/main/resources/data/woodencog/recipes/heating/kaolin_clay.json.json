@@ -4,6 +4,6 @@
         "item": "tfc:kaolin_clay"
     },
     "result": "tfc:powder/kaolinite",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

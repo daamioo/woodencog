@@ -4,6 +4,6 @@
         "item": "tfc:food/quail"
     },
     "result": "tfc:food/cooked_quail",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

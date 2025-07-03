@@ -4,6 +4,6 @@
         "item": "tfc:food/pheasant"
     },
     "result": "tfc:food/cooked_pheasant",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

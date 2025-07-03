@@ -4,6 +4,6 @@
         "item": "tfc:food/salmon"
     },
     "result": "tfc:food/cooked_salmon",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

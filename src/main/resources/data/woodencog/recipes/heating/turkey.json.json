@@ -4,6 +4,6 @@
         "item": "tfc:food/turkey"
     },
     "result": "tfc:food/cooked_turkey",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

@@ -4,6 +4,6 @@
         "item": "tfc:food/wolf"
     },
     "result": "tfc:food/cooked_wolf",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

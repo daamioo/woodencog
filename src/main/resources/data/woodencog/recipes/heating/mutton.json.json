@@ -4,6 +4,6 @@
         "item": "tfc:food/mutton"
     },
     "result": "tfc:food/cooked_mutton",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

@@ -5,7 +5,7 @@
             "ingredient": {
                 "item": "tfc:metal/ingot/sterling_silver"
             },
-            "min_temp": 912,
+            "min_temp": 912.0,
             "max_temp": 3000
         }
     ],
@@ -16,5 +16,5 @@
             "amount": 100
         }
     ],
-    "heatRequirement": 912
+    "heatRequirement": 912.0
 }

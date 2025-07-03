@@ -4,6 +4,6 @@
         "item": "minecraft:clay"
     },
     "result": "minecraft:terracotta",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

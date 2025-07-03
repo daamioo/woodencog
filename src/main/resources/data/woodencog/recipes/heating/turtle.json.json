@@ -4,6 +4,6 @@
         "item": "tfc:food/turtle"
     },
     "result": "tfc:food/cooked_turtle",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

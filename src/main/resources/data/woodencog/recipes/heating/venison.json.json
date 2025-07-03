@@ -4,6 +4,6 @@
         "item": "tfc:food/venison"
     },
     "result": "tfc:food/cooked_venison",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }

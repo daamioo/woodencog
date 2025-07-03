@@ -4,6 +4,6 @@
         "item": "tfc:food/beef"
     },
     "result": "tfc:food/cooked_beef",
-    "experience": 0,
+    "experience": 0.0,
     "cookingtime": 200
 }
