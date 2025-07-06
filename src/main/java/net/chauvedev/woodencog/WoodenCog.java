@@ -50,7 +50,7 @@ public class WoodenCog
 
         AllAdvancedRecipeTypes.register(modEventBus);
         //AllHeatedProcessingRecipes.register(modEventBus);
-        AllHeatedRecipeTypes.register(modEventBus);
+        //AllHeatedRecipeTypes.register(modEventBus);
 
         if(FMLEnvironment.dist == Dist.CLIENT) {
             /*PONDER_HELPER

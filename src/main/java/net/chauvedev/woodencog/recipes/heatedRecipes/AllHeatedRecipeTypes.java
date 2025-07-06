@@ -1,7 +1,15 @@
 package net.chauvedev.woodencog.recipes.heatedRecipes;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+
+import org.jetbrains.annotations.Nullable;
+
 import com.simibubi.create.AllTags;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
+
 import net.chauvedev.woodencog.WoodenCog;
 import net.chauvedev.woodencog.recipes.heatedRecipes.recipes.HeatedBasinRecipe;
 import net.chauvedev.woodencog.recipes.heatedRecipes.recipes.HeatedCompactingRecipe;
@@ -11,18 +19,18 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
-import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
 
 public enum AllHeatedRecipeTypes implements IRecipeTypeInfo {
     HEATED_BASIN(HeatedBasinRecipe::new),
@@ -92,7 +100,8 @@ public enum AllHeatedRecipeTypes implements IRecipeTypeInfo {
     public <T extends HeatedProcessingRecipe<?>> RecipeType<T> getHeatedProccesignType() {
         return (RecipeType<T>) type.get();
     }
-
+    
+    @OnlyIn(Dist.CLIENT)
     public <T extends HeatedProcessingRecipe<?>> List<T> getRecipes() {
         Level level = Minecraft.getInstance().level;
         if(level != null && level.isClientSide){
