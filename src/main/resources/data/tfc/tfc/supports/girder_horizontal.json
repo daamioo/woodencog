@@ -1,0 +1,19 @@
+{
+  "ingredient": [
+    {
+      "block": "create:metal_girder",
+      "properties": {
+        "axis": "x"
+      }
+    },
+    {
+      "block": "create:metal_girder",
+      "properties": {
+        "axis": "z"
+      }
+    }
+  ],
+  "support_up": 3,
+  "support_down": 3,
+  "support_horizontal": 7
+}
